@@ -1,14 +1,17 @@
 const router = require('express').Router()
 const ControllerUser = require('../controllers/controllerUser')
 const ControllerFood = require('../controllers/controllerFood')
+const authentication = require('../middlewares/authentication')
+const authorization = require('../middlewares/authorization')
 
-// router.get('/', (req, res) => res.send('Hello World!'))
+// ROUTER SIGNUP DAN SIGNIN
 router.post('/signup', ControllerUser.signup)
 router.post('/signin', ControllerUser.signin)
 
-router.post('/foods')
-router.get('/foods')
-router.delete('/foods/:id')
+// ROUTER FOODS
+router.post('/foods', authentication, ControllerFood.createFood)
+router.get('/foods', authentication, ControllerFood.getFoods)
+router.delete('/foods/:id', authentication, authorization, ControllerFood.deleteFood)
 
 
 module.exports = router

@@ -105,16 +105,16 @@
         <div class="card mb-4">
           <div class="card-body">
             <h5 class="font-weight-light mb-3">Add New Food</h5>
-            <form>
+            <form id="addFood">
               <div class="row">
                 <div class="col-md-12">
-                  <input type="text" class="form-control my-2" placeholder="Food name">
-                  <input type="price" class="form-control my-2" placeholder="Price" min="0">
+                  <input type="text" class="form-control my-2" id="food_title" placeholder="Food name" required>
+                  <input type="price" class="form-control my-2" id="food_price" placeholder="Price" min="0" required>
                   <div class="form-group my-2">
-                    <textarea class="form-control" rows="3" placeholder="Ingredients"></textarea>
+                    <textarea class="form-control" rows="3" id="food_ingredients" placeholder="Ingredients" required></textarea>
                   </div>
                   <label for="tag">Choose food tag:</label>
-                  <select class="form-control">
+                  <select class="form-control" id="food_tag" required>
                     <option value="ayam">ayam</option>
                     <option value="ikan">ikan</option>
                     <option value="other">other</option>
@@ -135,7 +135,7 @@
       </div>
 
       <!-- List Food -->
-      <div class="col-md-10" id="field_listFood">
+      <div class="col-md-10" id="listFood">
         <div class="card">
           <div class="card-body pb-0">
             <div class="d-flex justify-content-between mb-0">
