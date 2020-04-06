@@ -14,6 +14,9 @@
 
   <link rel="stylesheet" href="https://use.typekit.net/nhw3aqu.css" />
 
+  <!-- JQUERY CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
   <style>
     * {
       font-family: 'proxima-nova';
@@ -59,23 +62,23 @@
 <body class="background">
 
   <!-- Login -->
-  <div class="container my-3">
+  <div class="container my-3" id="field_login" style="display: none;">
     <div class="row">
       <div class="col-12 p-0 text-center">
         <img src="/assets/security.svg" alt="" style="height:40%;" />
         <h5 class="font-weight-light mb-3">You shall not pass, please verify your identity</h5>
         <div class="row">
           <div class="col-md-6 mx-auto">
-            <form>
+            <form id="signin">
               <div class="form-group">
-                <label for="exampleInputEmail1" class="text-left">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <label for="signin_email" class="text-left">Email address</label>
+                <input type="email" class="form-control" id="signin_email" aria-describedby="emailHelp"
                   placeholder="Enter email" />
               </div>
 
               <div class="form-group">
-                <label for="exampleInputPassword">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword" aria-describedby="emailHelp"
+                <label for="signin_password">Password</label>
+                <input type="password" class="form-control" id="signin_password" aria-describedby="emailHelp"
                   placeholder="Enter password" />
               </div>
 
@@ -88,8 +91,9 @@
   </div>
 
   <!-- Full App -->
-  <div class="container my-3">
-    <nav class="navbar navbar-light bg-light">
+  <div class="container my-3" id="field_app" style="display: none;">
+    <!-- TOMBOL LOGOUT -->
+    <nav class="navbar navbar-light bg-light" id="signout">
       <button class="btn btn-primary ml-auto">
         Logout
       </button>
@@ -131,7 +135,7 @@
       </div>
 
       <!-- List Food -->
-      <div class="col-md-10">
+      <div class="col-md-10" id="field_listFood">
         <div class="card">
           <div class="card-body pb-0">
             <div class="d-flex justify-content-between mb-0">
@@ -240,6 +244,7 @@
     </div>
   </div>
 
+  <script src="main.js"></script>
 </body>
 
 </html>

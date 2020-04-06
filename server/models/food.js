@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   }, { sequelize });
 
   Food.associate = function(models) {
-    Food.belongTo(models.User)
+    Food.belongsTo(models.User)
   };
   return Food;
 };

@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
 
   User.init({
     email: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
   }, 
   { hooks: {
     beforeCreate(user, opt){
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   },
-    sequelize 
+    sequelize
   });
 
   User.associate = function(models) {
